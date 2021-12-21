@@ -1,0 +1,10 @@
+.star {
+  margin-right: 4px;
+  max-width: 18px;
+  min-height: 18px;
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    font-family: 'InterMedium';
+  }
+}

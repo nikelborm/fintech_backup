@@ -1,0 +1,71 @@
+.account {
+  margin: 32px;
+}
+
+.account__title {
+  width: max-content;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 26px;
+  letter-spacing: -0.02em;
+  color: #0d0d0d;
+
+  margin-bottom: 40px;
+}
+
+.account__owner {
+  display: flex;
+  flex-direction: column;
+}
+
+.account__owner_establishments {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.account__owner_establishment {
+  position: relative;
+  flex: 1 0 17%;
+  height: max-content;
+  max-width: 570px;
+  min-width: 380px;
+
+  cursor: pointer;
+  padding: 50px;
+  margin-top: 40px;
+  margin-right: 24px;
+  margin-left: 24px;
+  background: #ffffff;
+
+  border-radius: 30px;
+
+  font: Roboto;
+  size: 16px;
+  line-height: 18, 75px;
+  text-align: Center;
+  color: #5d5fef;
+}
+
+@media screen and (max-width: 1480px) {
+  .account__owner_establishment {
+    flex: 1 0 21%;
+    // min-width: 90%;
+  }
+}
+
+@media screen and (max-width: 766px) {
+  .account {
+    margin: 12px;
+  }
+  .account__owner_establishment {
+    margin-right: 0;
+    min-width: 100%;
+  }
+  .account__owner_establishments {
+    justify-content: center;
+  }
+}

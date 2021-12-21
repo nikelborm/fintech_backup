@@ -1,0 +1,14 @@
+version: "3.5"
+services:
+  frontend-static:
+    image: "${DOCKER_REGISTRY}/frontend-static:${IMAGE_TAG}"
+    ports:
+      - ${FRONTEND_STATIC_BIND}:80/tcp
+    restart: always
+    build:
+      context: $FRONTEND_ROOT
+      target: static
+      args:
+        - IMAGE_TAG
+        - COMMIT_ID
+        - BRANCH

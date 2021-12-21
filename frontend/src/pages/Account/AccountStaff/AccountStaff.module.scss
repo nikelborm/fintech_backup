@@ -1,0 +1,32 @@
+.accountStaff {
+  &__title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    margin-bottom: 32px;
+  }
+  &__wrapper {
+    position: relative;
+  }
+  &__button {
+    margin-bottom: 32px;
+  }
+  &__text {
+    font-size: 40px;
+    line-height: 46px;
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #5d5fef;
+    font-style: normal;
+    font-weight: bold;
+  }
+  &__place {
+    margin-bottom: 24px;
+  }
+  &__tips {
+    min-height: 300px;
+  }
+}

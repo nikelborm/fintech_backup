@@ -1,0 +1,24 @@
+.button {
+  justify-content: center;
+  border-radius: 4px;
+  width: 100%;
+  cursor: pointer;
+  background-color: white;
+  padding: 14px 0;
+  outline: none;
+  border: none;
+  font-family: 'InterMedium';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #5d5fef;
+}
+
+.button__violet {
+  background: #5d5fef;
+  color: #fff;
+}

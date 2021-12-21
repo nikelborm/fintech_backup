@@ -1,0 +1,23 @@
+.app {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+
+  width: 100%;
+  margin: 0 auto;
+  min-height: 100vh;
+
+  background: #EEF1F7;
+}
+
+.app__content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+@media screen and (max-width: 1200px) {
+  .app {
+    justify-content: center;
+  }
+}

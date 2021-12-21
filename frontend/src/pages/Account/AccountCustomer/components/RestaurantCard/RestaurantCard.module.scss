@@ -1,0 +1,16 @@
+.card {
+  max-width: 335px;
+  min-width: 335px;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  &__content {
+    padding: 16px;
+    background: #F2F2F2;
+  }
+  &__description {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+}

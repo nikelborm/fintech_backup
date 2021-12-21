@@ -1,0 +1,41 @@
+@import "../../assets//styles/media.scss";
+
+.registration {
+  margin: 38px auto;
+  max-width: 516px;
+  padding: 54px 90px;
+  background-color: #fff;
+  border-radius: 8px;
+  &__title {
+    font-family: 'Ubuntu';
+    font-size: 30px;
+    line-height: 36px;
+    margin: 0 0 32px 0;
+  }
+  &__role {
+    margin-bottom: 32px;
+  }
+  &__checkbox {
+    margin-bottom: 12px;
+  }
+  &__error {
+    font-size: 14px;
+    color: red;
+  }
+  &__create{
+    display: flex;
+    color: #BDBDBD;
+    margin-top: 24px;
+    &_link {
+      color: #5D5FEF;
+      margin-left: 15px;
+    }
+  }
+}
+
+@include media-s {
+  .registration {
+    max-width: 100%;
+    padding: 24px 32px;
+  }
+}

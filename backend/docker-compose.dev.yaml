@@ -1,0 +1,15 @@
+version: "3.5"
+services:
+  backend:
+    ports:
+      - ${BACKEND_BIND}:3000/tcp
+    build:
+      context: $BACKEND_ROOT
+      target: build
+    volumes:
+      - type: bind
+        source: $BACKEND_ROOT/src
+        target: /app/src
+        consistency: delegated
+    environment:
+      - TSC_WATCHFILE=UseFsEvents

@@ -1,0 +1,134 @@
+scalar Date
+
+type Query {
+  user(id: Int!): User
+  currentUser: User
+  establishments: [Establishment!]!
+}
+
+type Mutation {
+  login(username: String!, password: String!): User
+  createUser(createUserInput: CreateUserInput!): User
+  createEstablishment(
+    createEstablishmentInput: CreateEstablishmentInput!
+  ): Establishment
+  sendTipAttempt(tipAmount: Int!): String!
+  createPaymentIntent(tipAmount: Int!, recipientUserId: Int!, comment: String): String!
+  createMatchRequest(
+    createMatchRequestInput: CreateMatchRequestInput!
+  ): MatchRequest
+  connectToEstablishment(
+    connectToEstablishmentInput: ConnectToEstablishmentInput!
+  ): MatchRequest
+}
+
+type User {
+  id: Int!
+  firstName: String!
+  lastName: String!
+  middleName: String
+  email: String!
+  password: String
+  isOwner: Boolean!
+  isCustomer: Boolean!
+  isEmployer: Boolean!
+  ownEstablishments: [Establishment!]!
+  employedInEstablishments: [Establishment!]!
+  receivedTransactions: [TransactionLog!]!
+  sentTransactions: [TransactionLog!]!
+  billingInfo: BillingInfo
+}
+
+type BillingInfo {
+  cardNumber: Int!
+  date: String!
+  cvc: Int!
+}
+
+type Establishment {
+  id: Int!
+  owners: [User!]
+  employers: [User!]
+  address: String!
+  ITN: Int!
+  name: String!
+  matchRequests: [MatchRequest!]
+}
+
+type MatchRequest {
+  id: Int!
+  createdByUser: User
+  wasUsedToInviteUser: User
+  establishment: Establishment
+  code: String!
+  createdAt: Date!
+  willExpireAt: Date!
+  wasUsedAt: Date
+}
+
+type TransactionLog {
+  id: Int!
+  recipient: User!
+  sender: User
+  moneyAmount: Int!
+  currency: String!
+  comment: String!
+  creationDate: Date!
+}
+
+enum Currency {
+  xcd
+  bbd
+  usd
+  cny
+  cop
+  crc
+  dop
+  gtq
+  hnl
+  hkd
+  jmd
+  nio
+  pyg
+  pen
+  eur
+  twd
+  ttd
+  mxn
+  rub
+  czk
+}
+
+input CreateUserInput {
+  firstName: String!
+  lastName: String!
+  middleName: String
+  email: String!
+  password: String!
+  isOwner: Boolean!
+  isCustomer: Boolean!
+  isEmployer: Boolean!
+  billingInfo: BillingInfoInput
+}
+
+input ConnectToEstablishmentInput {
+  matchRequestCode: String!
+}
+
+input BillingInfoInput {
+  cardNumber: Int!
+  date: String!
+  cvc: Int!
+}
+
+input CreateEstablishmentInput {
+  ownersIds: [Int!]
+  employersIds: [Int!]
+  address: String!
+  ITN: String!
+  name: String!
+}
+
+input CreateMatchRequestInput {
+  establishmentId: Int!
+}
