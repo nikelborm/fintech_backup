@@ -1,0 +1,41 @@
+@import "../../assets//styles//media.scss";
+
+.authorization {
+  margin: 38px auto;
+  max-width: 516px;
+  padding: 54px 90px;
+  background-color: #fff;
+  border-radius: 8px;
+  &__title {
+    font-family: 'Ubuntu';
+    font-size: 30px;
+    line-height: 36px;
+    margin: 0 0 32px 0;
+  }
+  &__button {
+    margin-top: 100px;
+    margin-bottom: 24px;
+  }
+  &__error {
+    font-size: 14px;
+    color: red;
+  }
+  &__create{
+    display: flex;
+    color: #BDBDBD;
+    &_link {
+      color: #5D5FEF;
+      margin-left: 15px;
+    }
+  }
+}
+
+@include media-s {
+  .authorization {
+    max-width: 100%;
+    padding: 24px 32px;
+    &__button {
+      margin-top: 40px;
+    }
+  }
+}

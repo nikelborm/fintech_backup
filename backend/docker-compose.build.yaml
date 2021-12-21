@@ -1,0 +1,15 @@
+version: "3.5"
+services:
+  backend-postgres:
+    build:
+      context: "${BACKEND_ROOT}/env/postgres"
+
+  backend:
+    image: "${DOCKER_REGISTRY}/backend:${IMAGE_TAG}"
+    ports:
+      - ${BACKEND_BIND}:3000/tcp
+    build:
+      context: ${BACKEND_ROOT}
+      args:
+        - DOCKER_REGISTRY
+        - IMAGE_TAG

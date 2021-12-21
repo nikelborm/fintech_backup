@@ -1,0 +1,24 @@
+#!/bin/bash
+export FRONTEND_ROOT=../frontend
+if [ "$1" = "build" ]; then
+    export COMPOSE_FILE=docker-compose.yaml:docker-compose.build.yaml:$FRONTEND_ROOT/docker-compose.yaml
+else
+    export COMPOSE_FILE=docker-compose.yaml:docker-compose.build.yaml:docker-compose.dev.yaml:$FRONTEND_ROOT/docker-compose.dev.yaml
+fi
+export BACKEND_ROOT=.
+
+export COMPOSE_PROJECT_NAME=fntch
+export IMAGE_TAG=$(git rev-parse --abbrev-ref HEAD)
+
+export DOCKER_REGISTRY=docker.mel.fm/fntch
+export FNTCH_ENV=dev
+export BACKEND_BIND=4000
+
+
+export FRONTEND_BIND=3000
+export FRONTEND_STATIC_BIND=5000
+
+export PG_BIND=127.0.0.1:55432
+export PG_DATA_DIR=~/docker-pg-fntch
+export POSTGRES_PASSWORD=123qwe
+export POSTGRES_USER=fntch

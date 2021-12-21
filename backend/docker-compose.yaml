@@ -1,0 +1,21 @@
+version: "3.5"
+services:
+  backend-postgres:
+    image: "${DOCKER_REGISTRY}/backend-postgres:${IMAGE_TAG}"
+    command: "-c default_text_search_config=pg_catalog.russian"
+    volumes:
+      - "${PG_DATA_DIR}/data:/var/lib/postgresql/data"
+    environment:
+      - POSTGRES_PASSWORD
+    restart: always
+  backend:
+    depends_on:
+      - backend-postgres
+    image: "${DOCKER_REGISTRY}/backend:${IMAGE_TAG}"
+    environment:
+      - FNTCH_ENV
+      - COMPOSE_PROJECT_NAME
+      - TYPEORM_HOST=backend-postgres
+      - TYPEORM_USERNAME=${POSTGRES_USER}
+      - TYPEORM_PASSWORD=${POSTGRES_PASSWORD}
+    restart: always

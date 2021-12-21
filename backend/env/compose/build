@@ -1,0 +1,15 @@
+#!/bin/bash
+
+export DOCKER_REGISTRY=docker.mel.fm/fntch
+export COMPOSE_FILE=docker-compose.yaml:docker-compose.build.yaml:../frontend/docker-compose.yaml
+export BACKEND_ROOT=.
+
+
+export BACKEND_BIND=127.0.0.1:56000
+export PG_DATA_DIR=/tmp/dummypg
+export POSTGRES_USER=dummy
+export POSTGRES_DB=dummy
+export POSTGRES_PASSWORD=dummy
+
+export FRONTEND_ROOT=../frontend/
+export FRONTEND_STATIC_BIND=127.0.0.1:56001
