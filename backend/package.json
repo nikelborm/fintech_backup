@@ -44,7 +44,7 @@
     "dataloader": "^2.0.0",
     "express-session": "^1.17.2",
     "graphql": "^15.8.0",
-    "nanoid": "^3.1.30",
+    "nanoid": "^3.1.31",
     "nestjs-stripe": "^1.0.0",
     "passport": "^0.5.0",
     "passport-local": "^1.0.0",
