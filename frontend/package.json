@@ -37,7 +37,7 @@
     "graphql": "^16.1.0",
     "html-react-parser": "^1.2.6",
     "js-cookie": "^3.0.1",
-    "moment": "^2.29.1",
+    "moment": "^2.29.2",
     "normalize.css": "^8.0.1",
     "opentok-react": "^0.11.0",
     "prettier": "^2.2.1",
